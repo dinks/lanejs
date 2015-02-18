@@ -54,9 +54,6 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-namespace <span class="hljs-string">"Lib.Model"</span>, <span class="hljs-function">-&gt;</span> <span class="hljs-comment">## Namespace for Creation of new models</span></pre></div></div>
-            
         </li>
         
         
@@ -65,6 +62,21 @@ namespace <span class="hljs-string">"Lib.Model"</span>, <span class="hljs-functi
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <h1 id="namespace-for-creation-of-new-models">Namespace for Creation of new models</h1>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>namespace <span class="hljs-string">"Lib.Model"</span>, <span class="hljs-function">-&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p>A Model is an abstraction over a business model, a data container with
 logic. It provides:</p>
@@ -100,11 +112,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-3">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <blockquote>
 <p>For set and get methods for dynamic attributes. Use the prototype here</p>
@@ -117,11 +129,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-4">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <blockquote>
 <p>Constructor</p>
@@ -134,11 +146,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-5">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <blockquote>
 <p>Dynamically add attributes, what is clean used for?</p>
@@ -151,11 +163,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-6">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <blockquote>
 <p>EventSpitter is added by LoudAccessors, where to put the silent check?</p>
@@ -168,11 +180,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-7">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>Class methods</p>
 
@@ -181,11 +193,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-8">
+        <li id="section-9">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
+                <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <blockquote>
 <p>General method to add validations to array</p>
@@ -198,11 +210,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-9">
+        <li id="section-10">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
+                <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <blockquote>
 <p>Initialize the array if it does not exist</p>
@@ -215,11 +227,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-10">
+        <li id="section-11">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
+                <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <blockquote>
 <p>Why?</p>
@@ -232,11 +244,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-11">
+        <li id="section-12">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-11">&#182;</a>
+                <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               <blockquote>
 <p>Slice it to create a new object</p>
@@ -249,11 +261,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-12">
+        <li id="section-13">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-12">&#182;</a>
+                <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <blockquote>
 <p>Push the new Validation Object</p>
@@ -264,25 +276,6 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
             <div class="content"><div class='highlight'><pre>      @::_validations.push validation
 
     <span class="hljs-property">@validatesPresenceOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-13">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
-              </div>
-              <blockquote>
-<p>Call the generic validatesWith</p>
-</blockquote>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.PresenceValidator, attr, opts
-
-    <span class="hljs-property">@validatesFormatOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -299,9 +292,9 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.FormatValidator, attr, opts
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.PresenceValidator, attr, opts
 
-    <span class="hljs-property">@validatesRangeOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
+    <span class="hljs-property">@validatesFormatOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -318,9 +311,9 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.RangeValidator, attr, opts
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.FormatValidator, attr, opts
 
-    <span class="hljs-property">@validatesAcceptanceOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
+    <span class="hljs-property">@validatesRangeOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -337,9 +330,9 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.AcceptanceValidator, attr, opts
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.RangeValidator, attr, opts
 
-    <span class="hljs-property">@validatesServerSideOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
+    <span class="hljs-property">@validatesAcceptanceOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -356,9 +349,9 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.ServerSideValidator, attr, opts
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.AcceptanceValidator, attr, opts
 
-    <span class="hljs-property">@validatesConfirmationOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
+    <span class="hljs-property">@validatesServerSideOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -375,7 +368,9 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.ConfirmationValidator, attr, opts</pre></div></div>
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.ServerSideValidator, attr, opts
+
+    <span class="hljs-property">@validatesConfirmationOf</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span></pre></div></div>
             
         </li>
         
@@ -385,6 +380,23 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <blockquote>
+<p>Call the generic validatesWith</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-property">@validatesWith</span> Lib.Validators.ConfirmationValidator, attr, opts</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <blockquote>
 <p>Add a set of validations to an attribute</p>
@@ -397,11 +409,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-20">
+        <li id="section-21">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
+                <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
               <blockquote>
 <p>@validates format: { with: /abcd/ }, presence: true</p>
@@ -414,11 +426,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-21">
+        <li id="section-22">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
+                <a class="pilcrow" href="#section-22">&#182;</a>
               </div>
               <blockquote>
 <p>Format this correctly</p>
@@ -431,11 +443,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-22">
+        <li id="section-23">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
+                <a class="pilcrow" href="#section-23">&#182;</a>
               </div>
               <blockquote>
 <p>Call the correct method</p>
@@ -448,11 +460,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-23">
+        <li id="section-24">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
+                <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
               <blockquote>
 <p>Add Custom Validator?</p>
@@ -465,11 +477,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-24">
+        <li id="section-25">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
+                <a class="pilcrow" href="#section-25">&#182;</a>
               </div>
               <blockquote>
 <p>Create the new Validator with the set of args</p>
@@ -484,11 +496,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-25">
+        <li id="section-26">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+                <a class="pilcrow" href="#section-26">&#182;</a>
               </div>
               <blockquote>
 <p>Create the array if does not exist</p>
@@ -501,11 +513,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-26">
+        <li id="section-27">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+                <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
               <blockquote>
 <p>Why?</p>
@@ -518,11 +530,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-27">
+        <li id="section-28">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+                <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
               <blockquote>
 <p>Create a new Object</p>
@@ -536,11 +548,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-28">
+        <li id="section-29">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
+                <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
               <blockquote>
 <p>Push the attribute into the array</p>
@@ -553,11 +565,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-29">
+        <li id="section-30">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+                <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
               <p>Instance methods</p>
 
@@ -566,11 +578,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-30">
+        <li id="section-31">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+                <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
               <blockquote>
 <p>Validate the attributes returning a promise</p>
@@ -588,11 +600,11 @@ See validators:    lib/assets/javascripts/validators.js.coffee</p>
         </li>
         
         
-        <li id="section-31">
+        <li id="section-32">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
+                <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
               <blockquote>
 <p>The result of the validation is either a number (the push into the errors array) or undefined
@@ -609,11 +621,11 @@ before calling <code>done</code></p>
         </li>
         
         
-        <li id="section-32">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+                <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <blockquote>
 <p>if it is not a Deferred will be done immediately</p>
@@ -628,11 +640,11 @@ before calling <code>done</code></p>
         </li>
         
         
-        <li id="section-33">
+        <li id="section-34">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
+                <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
               <blockquote>
 <p>After the call, @errors array gets filled with the validation errors</p>
@@ -651,11 +663,11 @@ before calling <code>done</code></p>
         </li>
         
         
-        <li id="section-34">
+        <li id="section-35">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-34">&#182;</a>
+                <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
               <blockquote>
 <p>Should only be used when there is no
@@ -674,11 +686,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-35">
+        <li id="section-36">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-35">&#182;</a>
+                <a class="pilcrow" href="#section-36">&#182;</a>
               </div>
               <blockquote>
 <p>Why? Isnt a validator enough? Is this to default?</p>
@@ -697,11 +709,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-36">
+        <li id="section-37">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-36">&#182;</a>
+                <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
               <blockquote>
 <p>But if any of the attributes is empty, then it returns false. :|</p>
@@ -717,11 +729,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-37">
+        <li id="section-38">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-37">&#182;</a>
+                <a class="pilcrow" href="#section-38">&#182;</a>
               </div>
               <blockquote>
 <p>Adds error message for the attribute to the errors hash</p>
@@ -734,11 +746,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-38">
+        <li id="section-39">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-38">&#182;</a>
+                <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <blockquote>
 <p>Initialize if not exists</p>
@@ -751,11 +763,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-39">
+        <li id="section-40">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-39">&#182;</a>
+                <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
               <blockquote>
 <p>A list of errors in case of multiple validations</p>
@@ -768,11 +780,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-40">
+        <li id="section-41">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-40">&#182;</a>
+                <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
               <blockquote>
 <p>Add the message</p>
@@ -787,11 +799,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-41">
+        <li id="section-42">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-41">&#182;</a>
+                <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
               <blockquote>
 <p>Special case, but why?</p>
@@ -804,11 +816,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-42">
+        <li id="section-43">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-42">&#182;</a>
+                <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
               <blockquote>
 <p>Convert to JSON, but why not attrAccessible?</p>
@@ -828,11 +840,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-43">
+        <li id="section-44">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-43">&#182;</a>
+                <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
               <blockquote>
 <p>Reset dirty</p>
@@ -845,11 +857,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-44">
+        <li id="section-45">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-44">&#182;</a>
+                <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
               <p>Set to null</p>
 
@@ -860,11 +872,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-45">
+        <li id="section-46">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-45">&#182;</a>
+                <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
               <blockquote>
 <p>To make Dirty?</p>
@@ -880,11 +892,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-46">
+        <li id="section-47">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-46">&#182;</a>
+                <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
               <blockquote>
 <p>To remove Dirty?</p>
@@ -900,11 +912,11 @@ Isnt it better to have only the validate method?</p>
         </li>
         
         
-        <li id="section-47">
+        <li id="section-48">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-47">&#182;</a>
+                <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
               <blockquote>
 <p>Is Dirty?</p>

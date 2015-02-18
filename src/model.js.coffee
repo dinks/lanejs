@@ -1,6 +1,7 @@
 #= require validators
 
-namespace "Lib.Model", -> ## Namespace for Creation of new models
+## Namespace for Creation of new models
+namespace "Lib.Model", ->
 
   # A Model is an abstraction over a business model, a data container with
   # logic. It provides:

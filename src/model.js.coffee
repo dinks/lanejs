@@ -134,7 +134,8 @@ namespace "Lib.Model", ->
             @emit "invalid:#{attr}", errors
             valid = false
           @emit if valid then "valid" else "invalid"
-        dfd.resolve() # > Why no reject? if invalid?
+        # > Why no `reject` if invalid?
+        dfd.resolve()
 
       dfd.promise()
 

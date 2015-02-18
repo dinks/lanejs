@@ -125,7 +125,7 @@ namespace "Lib.Model", ->
       for validation in @_validations || []
         results.push validation.validate(@)
 
-      # > if it is not a Deferred will be done immediately
+      # if it is not a Deferred will be done immediately
       $.when.apply($, results).done () =>
         unless silent
           valid = true

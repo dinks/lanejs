@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>validators.js.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="model.js.html">
+                  model.js.coffee
+                </a>
+              
+                
+                <a class="source" href="validators.js.html">
+                  validators.js.coffee
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>validators.js.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>= require dawanda/mixins/rate_limiter</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>BaseValidator</p>
+<p>Validator with general options
+‘if’ option runs in the context of the validated object</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Lib</span>.<span class="hljs-title">Module</span></span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <blockquote>
+<p>Constructor</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-property">@options</span> = {}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <blockquote>
+<p>Store all the options</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-property">@options</span>[ key ] = val <span class="hljs-keyword">for</span> key, val <span class="hljs-keyword">of</span> opts</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <blockquote>
+<p>Generic call which checks for validity</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-attribute">validate</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <blockquote>
+<p>If there is not condition involved, then execute the check WRT the object</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-property">@run</span>( obj ) <span class="hljs-keyword">unless</span> <span class="hljs-property">@options</span>.<span class="hljs-keyword">if</span>?</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <blockquote>
+<p>validates ‘a’, if: ‘b’ where ‘b’ is a method in the object i.e custom validation method</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> <span class="hljs-property">@options</span>.<span class="hljs-keyword">if</span> <span class="hljs-keyword">is</span> <span class="hljs-string">"string"</span>
+      condition = obj[ <span class="hljs-property">@options</span>.<span class="hljs-keyword">if</span> ]
+    <span class="hljs-keyword">else</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <blockquote>
+<p>Inline function</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      condition = <span class="hljs-property">@options</span>.<span class="hljs-keyword">if</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <blockquote>
+<p>If the condition satisfies, then execute the runner with the object</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-property">@run</span>( obj ) <span class="hljs-keyword">if</span> condition.call( obj ) <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <blockquote>
+<p>Implementation dependent</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-attribute">run</span>: <span class="hljs-function">-&gt;</span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-string">"'run' method has to be implemented by BaseValidator subclasses"</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>PresenceValidator</p>
+<p>Validates presence of an attribute. The error message can be configured using
+the ‘message’ option.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PresenceValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    opts = {} <span class="hljs-keyword">if</span> opts <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@options</span>.message ?= I18n.t(<span class="hljs-string">"errors.messages.empty"</span>)
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <blockquote>
+<p>Get the value</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    value = obj.get( <span class="hljs-property">@attribute</span> )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <blockquote>
+<p>If not present, then add the error</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">unless</span> value? <span class="hljs-keyword">and</span> ( value + <span class="hljs-string">""</span> ).length &gt; <span class="hljs-number">0</span>
+      obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>FormatValidator</p>
+<p>Validates format of an attribute, specified as a regular expression in the
+‘with’ option. The error message can be configured using the ‘message’
+option.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FormatValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@options</span>.message ?= I18n.t(<span class="hljs-string">"errors.messages.invalid"</span>)
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <blockquote>
+<p>Get the value</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    value = obj.get <span class="hljs-property">@attribute</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <blockquote>
+<p><code>with</code> is the holder for the Regular Expression</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">unless</span> value? <span class="hljs-keyword">and</span> ( value + <span class="hljs-string">""</span> ).length &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-property">@options</span>.<span class="hljs-reserved">with</span>?
+    obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message <span class="hljs-keyword">unless</span> <span class="hljs-property">@options</span>.<span class="hljs-reserved">with</span>.test value</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>RangeValidator</p>
+<p>Validates the range of a number. Using ‘min’ and ‘max’ option. The error
+message can be configured using the ‘message’ option.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RangeValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@options</span>.message ?= I18n.t(<span class="hljs-string">"errors.messages.not_in_range"</span>)
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <blockquote>
+<p>Get the value</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    value = obj.get <span class="hljs-property">@attribute</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <blockquote>
+<p><code>min</code> or <code>max</code> are required options else just return without any errors</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">unless</span> value? <span class="hljs-keyword">and</span> ( value + <span class="hljs-string">""</span> ).length &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> (<span class="hljs-property">@options</span>.max? <span class="hljs-keyword">or</span> <span class="hljs-property">@options</span>.min?)
+    <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.min? <span class="hljs-keyword">and</span> <span class="hljs-keyword">typeof</span> <span class="hljs-property">@options</span>.min <span class="hljs-keyword">is</span> <span class="hljs-string">"function"</span>
+      <span class="hljs-property">@options</span>.min = <span class="hljs-property">@options</span>.min.call( obj )
+    <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.max? <span class="hljs-keyword">and</span> <span class="hljs-keyword">typeof</span> <span class="hljs-property">@options</span>.max <span class="hljs-keyword">is</span> <span class="hljs-string">"function"</span>
+      <span class="hljs-property">@options</span>.max = <span class="hljs-property">@options</span>.max.call( obj )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <blockquote>
+<p>Expects the value to be a Moment Object?
+<code>min</code> id <strong>deprecated</strong></p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.min? <span class="hljs-keyword">and</span> <span class="hljs-keyword">typeof</span> <span class="hljs-property">@options</span>.min <span class="hljs-keyword">is</span> <span class="hljs-string">"object"</span> <span class="hljs-keyword">and</span> <span class="hljs-property">@options</span>.min._isAMomentObject <span class="hljs-keyword">and</span> !value.min(<span class="hljs-property">@options</span>.min)
+      obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <blockquote>
+<p>Expects the value to be a Moment Object?
+<code>max</code> is <strong>deprecated</strong></p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.max? <span class="hljs-keyword">and</span> <span class="hljs-keyword">typeof</span> <span class="hljs-property">@options</span>.max <span class="hljs-keyword">is</span> <span class="hljs-string">"object"</span> <span class="hljs-keyword">and</span> <span class="hljs-property">@options</span>.max._isAMomentObject <span class="hljs-keyword">and</span> !value.max(<span class="hljs-property">@options</span>.max)
+      obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.min? <span class="hljs-keyword">and</span> value &lt; <span class="hljs-property">@options</span>.min
+      obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.max? <span class="hljs-keyword">and</span> value &gt; <span class="hljs-property">@options</span>.max
+      obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>AcceptanceValidator</p>
+<p>Validates acceptance of an attribute. The acceptance value is ‘1’ by default,
+and can be configured with the ‘accept’ option. The error message can be
+configured using the ‘message’ option.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AcceptanceValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@options</span>.message ?= I18n.t(<span class="hljs-string">"errors.messages.accepted"</span>)
+    <span class="hljs-property">@options</span>.accept  ?= <span class="hljs-string">"1"</span>
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <blockquote>
+<p>Get the value and check if its the same. Good for “Accept Terms and Conditions”</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.message <span class="hljs-keyword">unless</span> obj.get( <span class="hljs-property">@attribute</span> ) <span class="hljs-keyword">is</span> <span class="hljs-property">@options</span>.accept</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>LengthValidator</p>
+<p>Validates format of an attribute, specified as a regular expression in the
+‘with’ option. The error message can be configured using the ‘message’
+option.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LengthValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@options</span>.too_long ?= I18n.t(<span class="hljs-string">"errors.messages.too_long.other"</span>)
+    <span class="hljs-property">@options</span>.too_short ?= I18n.t(<span class="hljs-string">"errors.messages.too_short.other"</span>)
+    <span class="hljs-property">@options</span>.wrong_length ?= I18n.t(<span class="hljs-string">"errors.messages.wrong_length.other"</span>)
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <blockquote>
+<p>Smart way to only check for <code>.length</code></p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    value = <span class="hljs-string">"<span class="hljs-subst">#{obj.get <span class="hljs-property">@attribute</span>}</span>"</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <blockquote>
+<p>This seems wrong, Length validation should Throw too_short in case of non existent value!</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">unless</span> value?</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <blockquote>
+<p><code>max</code> check</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.too_long <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.max? <span class="hljs-keyword">and</span> value.length &gt; <span class="hljs-property">@options</span>.max</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <blockquote>
+<p><code>min</code> check</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.too_short <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.min? <span class="hljs-keyword">and</span> value.length &lt; <span class="hljs-property">@options</span>.min</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <blockquote>
+<p><code>is</code> check (Exact length)</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    obj.addError <span class="hljs-property">@attribute</span>, <span class="hljs-property">@options</span>.wrong_length <span class="hljs-keyword">if</span> <span class="hljs-property">@options</span>.<span class="hljs-keyword">is</span>? <span class="hljs-keyword">and</span> value.length != <span class="hljs-property">@options</span>.<span class="hljs-keyword">is</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>ConfirmationValidator</p>
+<p>Validates confirmation of an attribute, checking that its value is equal to
+another attribute named the same, plus a ‘_confirmation’ suffix.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfirmationValidator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseValidator</span></span>
+
+  <span class="hljs-attribute">constructor</span>: <span class="hljs-function"><span class="hljs-params">( attr, opts )</span> -&gt;</span>
+    <span class="hljs-keyword">super</span> attr, opts
+    <span class="hljs-property">@attribute</span> = attr
+    <span class="hljs-property">@confirmed_attribute</span> = <span class="hljs-property">@options</span>.confirmed_attribute || <span class="hljs-property">@attribute</span> + <span class="hljs-string">"_confirmation"</span>
+    <span class="hljs-property">@options</span>.message ?= I18n.t(<span class="hljs-string">"errors.messages.confirmed"</span>)
+
+  <span class="hljs-attribute">run</span>: <span class="hljs-function"><span class="hljs-params">( obj )</span> -&gt;</span>
+    value           = obj.get( <span class="hljs-property">@attribute</span> )
+    confirmed_value = obj.get( <span class="hljs-property">@confirmed_attribute</span> )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <blockquote>
+<p>return if empty</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">unless</span> value? <span class="hljs-keyword">and</span> ( value + <span class="hljs-string">""</span> ).length &gt; <span class="hljs-number">0</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <blockquote>
+<p>If both values are not the same, then error</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">unless</span> value <span class="hljs-keyword">is</span> confirmed_value
+      obj.addError <span class="hljs-property">@confirmed_attribute</span>, <span class="hljs-property">@options</span>.message</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <blockquote>
+<p>To extend this set, use the same namespace</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>namespace <span class="hljs-string">"Lib.Validators"</span>, <span class="hljs-function">-&gt;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <p>Export validators</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-attribute">BaseValidator</span>:         BaseValidator
+  <span class="hljs-attribute">PresenceValidator</span>:     PresenceValidator
+  <span class="hljs-attribute">FormatValidator</span>:       FormatValidator
+  <span class="hljs-attribute">AcceptanceValidator</span>:   AcceptanceValidator
+  <span class="hljs-attribute">RangeValidator</span>:        RangeValidator
+  <span class="hljs-attribute">LengthValidator</span>:       LengthValidator
+  <span class="hljs-attribute">ConfirmationValidator</span>: ConfirmationValidator</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

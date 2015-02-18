@@ -138,8 +138,8 @@ namespace "Lib.Model", ->
 
       dfd.promise()
 
-    # > Should only be used when there is no
-    # > asynchronous validation
+    # Should only be used when there is no
+    # asynchronous validation
     # > Isnt it better to have only the validate method?
     isValid: ( opts ) ->
       @validate opts

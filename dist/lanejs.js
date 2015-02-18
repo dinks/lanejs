@@ -1444,6 +1444,7 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
         val = opts[key];
         this.options[key] = val;
       }
+      this.attribute = attr;
     }
 
     BaseValidator.prototype.validate = function(obj) {
@@ -1478,7 +1479,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
         opts = {};
       }
       PresenceValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       if ((_base = this.options).message == null) {
         _base.message = I18n.t("errors.messages.empty");
       }
@@ -1502,7 +1502,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
     function FormatValidator(attr, opts) {
       var _base;
       FormatValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       if ((_base = this.options).message == null) {
         _base.message = I18n.t("errors.messages.invalid");
       }
@@ -1529,7 +1528,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
     function RangeValidator(attr, opts) {
       var _base;
       RangeValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       if ((_base = this.options).message == null) {
         _base.message = I18n.t("errors.messages.not_in_range");
       }
@@ -1568,7 +1566,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
     function AcceptanceValidator(attr, opts) {
       var _base, _base1;
       AcceptanceValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       if ((_base = this.options).message == null) {
         _base.message = I18n.t("errors.messages.accepted");
       }
@@ -1593,7 +1590,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
     function LengthValidator(attr, opts) {
       var _base, _base1, _base2;
       LengthValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       if ((_base = this.options).too_long == null) {
         _base.too_long = I18n.t("errors.messages.too_long.other");
       }
@@ -1632,7 +1628,6 @@ creates and returns the window.Foo.Bar.Baz object, setting it to a class.
     function ConfirmationValidator(attr, opts) {
       var _base;
       ConfirmationValidator.__super__.constructor.call(this, attr, opts);
-      this.attribute = attr;
       this.confirmed_attribute = this.options.confirmed_attribute || this.attribute + "_confirmation";
       if ((_base = this.options).message == null) {
         _base.message = I18n.t("errors.messages.confirmed");

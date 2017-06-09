@@ -10,6 +10,7 @@ class BaseValidator extends Lib.Module
   constructor: ( attr, opts ) ->
     @options = {}
     @options[ key ] = val for key, val of opts
+    @attribute = attr
 
   validate: ( obj ) ->
     return @run( obj ) unless @options.if?
@@ -32,7 +33,6 @@ class PresenceValidator extends BaseValidator
   constructor: ( attr, opts ) ->
     opts = {} if opts is true
     super attr, opts
-    @attribute = attr
     @options.message ?= I18n.t("errors.messages.empty")
 
   run: ( obj ) ->
@@ -50,7 +50,6 @@ class FormatValidator extends BaseValidator
 
   constructor: ( attr, opts ) ->
     super attr, opts
-    @attribute = attr
     @options.message ?= I18n.t("errors.messages.invalid")
 
   run: ( obj ) ->
@@ -60,14 +59,13 @@ class FormatValidator extends BaseValidator
 
 # RangeValidator
 #
-# Validates the range of a number. Using 'min' and 'max' option. The error 
+# Validates the range of a number. Using 'min' and 'max' option. The error
 # message can be configured using the 'message' option.
 #
 class RangeValidator extends BaseValidator
 
   constructor: ( attr, opts ) ->
     super attr, opts
-    @attribute = attr
     @options.message ?= I18n.t("errors.messages.not_in_range")
 
   run: ( obj ) ->
@@ -97,7 +95,6 @@ class AcceptanceValidator extends BaseValidator
 
   constructor: ( attr, opts ) ->
     super attr, opts
-    @attribute = attr
     @options.message ?= I18n.t("errors.messages.accepted")
     @options.accept  ?= "1"
 
@@ -114,7 +111,6 @@ class LengthValidator extends BaseValidator
 
   constructor: ( attr, opts ) ->
     super attr, opts
-    @attribute = attr
     @options.too_long ?= I18n.t("errors.messages.too_long.other")
     @options.too_short ?= I18n.t("errors.messages.too_short.other")
     @options.wrong_length ?= I18n.t("errors.messages.wrong_length.other")
@@ -135,7 +131,6 @@ class ConfirmationValidator extends BaseValidator
 
   constructor: ( attr, opts ) ->
     super attr, opts
-    @attribute = attr
     @confirmed_attribute = @options.confirmed_attribute || @attribute + "_confirmation"
     @options.message ?= I18n.t("errors.messages.confirmed")
 
